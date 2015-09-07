@@ -47,6 +47,16 @@
       
         <p><label for="usrLanguage">Prefered Language</label></p>
         <p><input class="box" type="text" name="usrLanguage" id="usrLanguage" placeholder="Prefered Language"></p>
+        
+        <p><label for="usrPC">Prefered Contact Method<span class="manditory">*</span></label></p>
+        <p>
+        <select class="box" name="usrPC" id="usrPC" >
+					<option value="" disabled selected>Contact Method</option>
+					<option value=1>Phone Call</option>
+            <option value=2>SMS</option>
+            <option value=3>Email</option>
+				</select>
+        </p>
 
         <p><input type="submit" value="Register"></p>
 		</form>

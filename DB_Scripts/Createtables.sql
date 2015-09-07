@@ -81,7 +81,7 @@ DROP TABLE IF EXISTS `Users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Users` (
-  `UserID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(25) NOT NULL,
   `LastName` varchar(25) NOT NULL,
   `Email` varchar(100) NOT NULL,
@@ -91,6 +91,7 @@ CREATE TABLE `Users` (
   `CreatedTimestamp` datetime DEFAULT NULL,
   `OriginCountry` varchar(45) DEFAULT NULL,
   `Language` varchar(45) DEFAULT NULL,
+  `PreferedContactMethod` int(11) NOT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

@@ -12,6 +12,7 @@
   $state = $_POST['usrState'];
   $userOrigin = $_POST['usrCOO'];
   $userLanguage = $_POST['usrLanguage'];
+  $userContact = $_POST['usrPC'];
 	
 	$sql = "
 		INSERT INTO Users(
@@ -23,7 +24,8 @@
       UserLevel,
       CreatedTimestamp,
       OriginCountry,
-      Language
+      Language,
+      PreferedContactMethod
 		)
 		VALUES (
 			:userFirstname,
@@ -34,7 +36,8 @@
       1,
       now(),
       :userOrigin,
-      :userLanguage
+      :userLanguage,
+      :userContact
     );
     
     INSERT INTO Address(
@@ -67,6 +70,7 @@
   $stmt->bindValue(':userPhone', $userPhone);
 	$stmt->bindValue(':userOrigin', $userOrigin);
   $stmt->bindValue(':userLanguage', $userLanguage);
+  $stmt->bindValue(':userContact', $userContact);
   $stmt->bindValue(':address', $address);
   $stmt->bindValue(':suburb', $suburb);
   $stmt->bindValue(':postcode', $postcode);
