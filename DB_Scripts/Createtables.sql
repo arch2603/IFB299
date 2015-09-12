@@ -115,3 +115,42 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2015-09-07 20:24:47
+
+DROP TABLE IF EXISTS `ServiceProviders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+
+CREATE TABLE `ServiceProviders` (
+  `Service_Provider_ID` int(8) NOT NULL,
+  `FirstName` varchar(15) NOT NULL,
+  `LastName` varchar(15) DEFAULT NULL,
+  `Phone` int(12) DEFAULT NULL,
+  `JobID` int(11) NOT NULL,
+  PRIMARY KEY (`Service_Provider_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+LOCK TABLES `ServiceProviders` WRITE;
+/*!40000 ALTER TABLE `ServiceProviders` DISABLE KEYS */;
+
+/*!40000 ALTER TABLE `ServiceProviders` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+ALTER TABLE `mad_dep`.`ServiceProviders` 
+CHANGE COLUMN `Phone` `Phone` INT(12) NULL DEFAULT NULL COMMENT '' ;
+
+ALTER TABLE `mad_dep`.`ServiceProviders` 
+ADD COLUMN `JobID` INT(8) NULL COMMENT '' AFTER `Phone`;
+
+ALTER TABLE `mad_dep`.`ServiceProviders` 
+CHANGE COLUMN `JobID` `JobID` INT(11) NOT NULL COMMENT '' ;

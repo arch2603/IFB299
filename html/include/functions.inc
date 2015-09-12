@@ -1,7 +1,14 @@
 <?php
-	function dbCon() {
-		$pdo = new PDO('mysql:host=localhost;dbname=mad_dep', 'root', 'Password1');
-		return $pdo;
+	function dbCon() 
+	{
+		try{
+
+			$pdo = new PDO('mysql:host=localhost;dbname=mad_dep', 'root', 'Password1');
+		}
+	}
+	catch(PDOException $e)
+	{
+		echo $e->getMessage();
 	}
   
   function sessionTest() {
