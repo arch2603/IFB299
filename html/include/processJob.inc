@@ -1,8 +1,9 @@
 <?php
+	sessionTest();
 	$pdo = dbCon();
 	$jobType = $_POST['jobType'];
 	$jobDesc = $_POST['jobDesc'];
-	$usr = $_SESSION['memberID'];
+	$usr = $_SESSION['userID'];
 	
 	$query = "
 		INSERT INTO Jobs(
