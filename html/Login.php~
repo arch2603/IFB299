@@ -1,0 +1,6 @@
+<?php
+	start_session();
+	$_SESSION["login"]=1;
+	header('Location: JobReq.php');
+	exit;
+?>

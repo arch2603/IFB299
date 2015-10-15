@@ -1,0 +1,11 @@
+# Install Services
+sudo apt-get update
+sudo apt-get install lamp-server^
+sudo apt-get install openssh-server
+sudo reboot
+
+# Determine IP to connect with HTML, SSH and SCP
+ip addr
+
+# Copy files to apache after SCP to home directory
+sudo cp -R html/* /var/www/html/
